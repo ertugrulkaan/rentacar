@@ -1,0 +1,21 @@
+<div *ngIf="dataLoaded==false" class="d-flex align-items-center">
+  <strong>Musteriler Yukleniyor...</strong>
+  <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+</div>
+<table class="table table-striped table-hover" style="padding-top: 20px;">
+  <thead>
+        <tr>
+            <th>ID</th>
+            <th>USER ID</th>
+            <th>FIRMA ADI</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.id}}</td>
+            <td>{{customer.userID}}</td>
+            <td>{{customer.companyName}}</td>
+        </tr>
+    </tbody>
+
+</table>

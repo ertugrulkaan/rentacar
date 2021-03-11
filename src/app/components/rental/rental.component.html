@@ -1,0 +1,31 @@
+<div *ngIf="dataLoaded==false" class="d-flex align-items-center">
+  <strong>Kiralamalar Yukleniyor...</strong>
+  <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+</div>
+<table class="table table-striped table-hover" style="padding-top: 20px;">
+  <thead>
+        <tr>
+            <th>ID</th>
+            <th>MARKA</th>
+            <th>RENK</th>
+            <th>MUS ADI</th>
+            <th>MUS EMAIL</th>
+            <th>KIR TARIHI</th>
+            <th>TES TARIHI</th>
+            <th>GUNLUK FIYAT</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rental of rentals">
+            <td>{{rental.rentalID}}</td>
+            <td>{{rental.brandName}}</td>
+            <td>{{rental.colorName}}</td>
+            <td>{{rental.customerFirstName + ' ' + rental.customerLastName}}</td>
+            <td>{{rental.customerEmail}}</td>
+            <td>{{rental.rentDate}}</td>
+            <td>{{rental.returnDate==null?'Teslim Edilmedi':rental.returnDate}}</td>
+            <td>{{rental.dailyPrice}}</td>
+        </tr>
+    </tbody>
+
+</table>
